@@ -31,6 +31,7 @@ public class MemberQABean {
 	private String memMail;
 	private String memName;
 	private Integer memTel;
+	private String memAddr;
 	private String memAsk;
 	private String memTitle;
 	private java.util.Date memQuesTime;
@@ -95,19 +96,10 @@ public class MemberQABean {
 //			HibernateUtil.closeSessionFactory();
 ////			factory.close();
 //		}
-//	}
-
-	
-
-	@Override
-	public String toString() {
-		return "MemberQABean [memberQuesNum=" + memberQuesNum + ", memTopic=" + memTopic + ", memId=" + memId
-				+ ", memMail=" + memMail + ", memName=" + memName + ", memTel=" + memTel + ", memAsk=" + memAsk
-				+ ", memTitle=" + memTitle + ", memQuesTime=" + memQuesTime + "]";
-	}
+//	}	
 
 	public MemberQABean(Integer memberQuesNum, String memTopic, String memId, String memMail, String memName,
-			Integer memTel, String memAsk, String memTitle, java.util.Date memQuesTime) {
+			Integer memTel, String memAddr, String memAsk, String memTitle, java.util.Date memQuesTime) {
 		super();
 		this.memberQuesNum = memberQuesNum;
 		this.memTopic = memTopic;
@@ -115,11 +107,26 @@ public class MemberQABean {
 		this.memMail = memMail;
 		this.memName = memName;
 		this.memTel = memTel;
+		this.memAddr = memAddr;
 		this.memAsk = memAsk;
 		this.memTitle = memTitle;
 		this.memQuesTime = memQuesTime;
 	}
 
+		@Override
+		public String toString() {
+			return "MemberQABean [memberQuesNum=" + memberQuesNum + ", memTopic=" + memTopic + ", memId=" + memId
+					+ ", memMail=" + memMail + ", memName=" + memName + ", memTel=" + memTel + ", memAddr=" + memAddr
+					+ ", memAsk=" + memAsk + ", memTitle=" + memTitle + ", memQuesTime=" + memQuesTime + "]";
+		}
+		public String getMemAddr() {
+			return memAddr;
+		}
+
+		public void setMemAddr(String memAddr) {
+			this.memAddr = memAddr;
+		}
+		
 	public String getMemTopic() {
 		return memTopic;
 	}
