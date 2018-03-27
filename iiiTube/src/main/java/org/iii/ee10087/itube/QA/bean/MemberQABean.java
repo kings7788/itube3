@@ -26,27 +26,20 @@ public class MemberQABean {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer memberQuesNum;
+	private String memTopic;
 	private String memId;
 	private String memMail;
 	private String memName;
 	private Integer memTel;
 	private String memAsk;
+	private String memTitle;
 	private java.util.Date memQuesTime;
 
 	
 	public MemberQABean() {
 		
 	}
-	public MemberQABean(Integer memberQuesNum, String memId, String memMail, String memName, Integer memTel,
-			String memAsk, Date memQuesTime) {
-		this.memberQuesNum = memberQuesNum;
-		this.memId = memId;
-		this.memMail = memMail;
-		this.memName = memName;
-		this.memTel = memTel;
-		this.memAsk = memAsk;
-		this.memQuesTime = memQuesTime;
-	}
+
 //	public static void main(String[] args) throws SQLException {
 ////		StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().configure().build();
 ////		SessionFactory factory = new MetadataSources(serviceRegistry).buildMetadata().buildSessionFactory();
@@ -104,6 +97,37 @@ public class MemberQABean {
 //		}
 //	}
 
+	
+
+	@Override
+	public String toString() {
+		return "MemberQABean [memberQuesNum=" + memberQuesNum + ", memTopic=" + memTopic + ", memId=" + memId
+				+ ", memMail=" + memMail + ", memName=" + memName + ", memTel=" + memTel + ", memAsk=" + memAsk
+				+ ", memTitle=" + memTitle + ", memQuesTime=" + memQuesTime + "]";
+	}
+
+	public MemberQABean(Integer memberQuesNum, String memTopic, String memId, String memMail, String memName,
+			Integer memTel, String memAsk, String memTitle, java.util.Date memQuesTime) {
+		super();
+		this.memberQuesNum = memberQuesNum;
+		this.memTopic = memTopic;
+		this.memId = memId;
+		this.memMail = memMail;
+		this.memName = memName;
+		this.memTel = memTel;
+		this.memAsk = memAsk;
+		this.memTitle = memTitle;
+		this.memQuesTime = memQuesTime;
+	}
+
+	public String getMemTopic() {
+		return memTopic;
+	}
+
+	public void setMemTopic(String memTopic) {
+		this.memTopic = memTopic;
+	}
+
 	public Integer getMemberQuesNum() {
 		return memberQuesNum;
 	}
@@ -158,13 +182,13 @@ public class MemberQABean {
 	public void setMemQuesTime(java.util.Date memQuesTime) {
 		this.memQuesTime = memQuesTime;
 	}
-	@Override
-	public String toString() {
-		return "MemberQABean [memberQuesNum=" + memberQuesNum + ", memId=" + memId + ", memMail=" + memMail
-				+ ", memName=" + memName + ", memTel=" + memTel + ", memAsk=" + memAsk + ", memQuesTime=" + memQuesTime
-				+ "]";
+	
+	public String getMemTitle() {
+		return memTitle;
 	}
 	
-
+	public void setMemTitle(String memTitle) {
+		this.memTitle = memTitle;
+	}
 
 }
