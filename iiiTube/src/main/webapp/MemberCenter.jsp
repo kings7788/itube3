@@ -18,7 +18,7 @@
 
 	<a href="<c:url value="page/Select.jsp"/>">查詢會員</a><br>
 	<a href="<c:url value="page/Update.jsp"/>">修改會員資料</a><br>
-	<a href="<c:url value="customerreport/CustomerCommonQA.jsp"/>">客服中心</a><br>
+	<a href="<c:url value="customerreport/contact.jsp"/>">客服中心</a><br>
 	<a href="<c:url value="page/Logout.jsp"/>">會員登出</a>
 </c:if>	
 </body>

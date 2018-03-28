@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
   <head>
@@ -12,10 +14,10 @@
     <title>Modern Business - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="../css/modern-business.css" rel="stylesheet">
 
   </head>
 
@@ -83,7 +85,7 @@
 
       <!-- Page Heading/Breadcrumbs -->
       <h1 class="mt-4 mb-3">線上回報單
-        <small>Subheading</small>
+        <small></small>
       </h1>
 
       <ol class="breadcrumb">
@@ -100,12 +102,11 @@
       <div class="row">
         <div class="col-lg-8 mb-4">
           <h3>讓我們知道您的意見~</h3>
-          <form name="sentMessage" id="contactForm" novalidate>
+          <form  action="<c:url value="/customerreport/qa.controller"/>" name="sentMessage" id="contactForm" enctype="multipart/form-data"  method="post">
             <div class="control-group form-group">
               <div class="controls">
                 <label>account:</label>
-                ${insertok.memId}
-				<input type="hidden" class="form-control" id="account" name="idd" value="${LoginOK.account}" readonly="readonly">
+                <input type="text" class="form-control" id="account" name="idd" value="${LoginOK.account}" readonly="readonly">
                 <p class="help-block"></p>
               </div>
             </div>
@@ -117,7 +118,7 @@
 <!--             </div> -->
             <div class="control-group form-group">
               <div class="controls">
-                <label>nickname:</label>
+                <label>Name:</label>
                 <input type="text" class="form-control" id="nickname"  name="name" value="${LoginOK.name}" readonly="readonly"">
               </div>
             </div>
@@ -130,13 +131,13 @@
             <div class="control-group form-group">
               <div class="controls">
                 <label>cellphone:</label>
-                <input type="text" class="form-control" id="cellphone" name="tel" value="${LoginOK.memTel}">
+                <input type="text" class="form-control" id="cellphone" name="tel" value="">
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>address:</label>
-                <input type="text" class="form-control" id="address" name="address" value="${LoginOK.memAddr} ">
+                <input type="text" class="form-control" id="address" name="address" value="${LoginOK.address} ">
               </div>
             </div>
             <div class="control-group form-group">
@@ -163,22 +164,22 @@
                 <textarea rows="4" cols="180"  class="form-control" name="report" value="${param.report}"></textarea>
               </div>
             </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>gender:</label>
-                男:<input type="radio" id="gender" name="" value="male" required data-validation-required-message="Please enter your email address.">
-                女:<input type="radio" id="gender"  name="" value="female" required data-validation-required-message="Please enter your email address.">
-              </div>
-            </div>
+<!--             <div class="control-group form-group"> -->
+<!--               <div class="controls"> -->
+<!--                 <label>gender:</label> -->
+<!--                 男:<input type="radio" id="gender" name="" value="male" required data-validation-required-message="Please enter your email address."> -->
+<!--                 女:<input type="radio" id="gender"  name="" value="female" required data-validation-required-message="Please enter your email address."> -->
+<!--               </div> -->
+<!--             </div> -->
             <div class="control-group form-group">
               <div class="controls">
                 <label>照片:</label>
-                <input type="file" class="form-control" id="picture" name="picture"  required data-validation-required-message="Please enter your email address.">
+                <input type="file" class="form-control" id="picture" name="picture" ">
               </div>
             </div>
             <div id="success"></div>
             <!-- For success/fail messages -->
-            <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
+            <input type="submit" class="btn btn-primary" id="sendMessageButton" name="prodaction" value="submit"/>
           </form>
         </div>
 
@@ -197,13 +198,13 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Contact form JavaScript -->
     <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <script src="../js/jqBootstrapValidation.js"></script>
+<!--     <script src="js/contact_me.js"></script> -->
 
   </body>
 

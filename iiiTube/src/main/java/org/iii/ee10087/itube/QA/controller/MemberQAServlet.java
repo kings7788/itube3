@@ -1,28 +1,43 @@
 package org.iii.ee10087.itube.QA.controller;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.SQLException;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import org.hibernate.Session;
 import org.iii.ee10087.itube.QA.bean.MemberQABean;
 import org.iii.ee10087.itube.QA.dao.MemeberQAHibernate;
 import org.iii.ee10087.itube.QA.service.MemberQAService;
+
+import util00.GlobalService;
+import util00.SystemUtils;
+
+@MultipartConfig(location = "", 
+fileSizeThreshold = 5*1024 * 1024, 
+maxFileSize = 1024 * 1024 * 500, 
+maxRequestSize = 1024 * 1024 * 500 * 5)
+
 @WebServlet("/customerreport/qa.controller")
 public class MemberQAServlet extends HttpServlet {
 private MemberQAService service ;
 private MemberQABean bean;
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8"); // 文字資料轉內碼
 		HttpSession session = request.getSession();
 		//接收資料
 		String topic = request.getParameter("topic");
@@ -34,10 +49,38 @@ private MemberQABean bean;
 		String titlee = request.getParameter("title");
 		String report = request.getParameter("report");
 		String submit = request.getParameter("prodaction");
-		
-		//驗證id 不能是空值
+		long sizeInBytes = 0;
+		InputStream is = null;
+		String fileName="";
 		Map<String, String> errors =new HashMap<String,String>();
 		request.setAttribute("errors", errors);
+		// 取出HTTP multipart request內所有的parts
+		Collection<Part> parts = request.getParts(); 
+				
+		// 由parts != null來判斷此上傳資料是否為HTTP multipart request
+		if (parts != null) {   // 如果這是一個上傳資料的表單				
+			for (Part p : parts) {   
+				String fldName = p.getName();
+				String value = request.getParameter(fldName);		
+			
+				if (p.getContentType() != null) {
+					// 取出圖片檔的檔名
+					fileName = GlobalService.getFileName(p);
+					// 調整圖片檔檔名的長度，需要檔名中的附檔名，所以調整主檔名以免檔名太長無法寫入表格
+					fileName = GlobalService.adjustFileName(fileName, GlobalService.IMAGE_FILENAME_LENGTH);
+					if (fileName != null && fileName.trim().length() > 0) {
+						sizeInBytes = p.getSize();
+						is = p.getInputStream();
+					} else {
+						errors.put("errPicture", "必須挑選圖片檔");
+					}
+				}
+			}
+		}
+			
+			
+		//驗證id 不能是空值
+	
 		
 		if("submit".equals(submit)) {
 			if(id==null||id.length()==0) {
@@ -45,6 +88,14 @@ private MemberQABean bean;
 			}
 		}//驗證id結束
 //轉換資料
+		
+		Blob blob = null;
+		try {
+			blob = SystemUtils.fileToBlob(is, sizeInBytes);
+		} catch (SQLException e1) {
+			
+			e1.printStackTrace();
+		}
 		int telp = 0;
 		if(tel!=null &&tel.length()!=0) {
 			try {
@@ -68,7 +119,7 @@ private MemberQABean bean;
 		bean.setMemTitle(titlee);
 		bean.setMemAsk(report);
 		bean.setMemQuesTime(date);
-	
+		bean.setMemQuespic(blob);
 //model 結果導向view
 		String contextPath = getServletContext().getContextPath();
 		if(submit!=null&& submit.equals("submit")) {
@@ -80,8 +131,7 @@ private MemberQABean bean;
 						session.setAttribute("insertok", bean);
 //						response.sendRedirect(
 //						response.encodeRedirectURL(contextPath + "/customerreport/reportSuccess.jsp" ));			
-						response.sendRedirect(contextPath+"/customerreport/reportSuccess.jsp");
-						
+						response.sendRedirect(contextPath+"/customerreport/reportSuccess.jsp");						
 						//request.getRequestDispatcher("/customerreport/reportSuccess.jsp").forward(request,response);
 						return;
 				} catch (SQLException e) {
@@ -96,11 +146,8 @@ private MemberQABean bean;
 			request.getRequestDispatcher("/customerreport/CustomerCommonQA.jsp").forward(request,response);
 		}
 		
-	}//doget結束	
+	}//dopost結束	
 	
 
-	@Override
-	protected void doPost(HttpServletRequest  request, HttpServletResponse response) throws ServletException, IOException {
-		this.doGet(request, response);
-	}
+
 }

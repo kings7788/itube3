@@ -1,5 +1,6 @@
 package org.iii.ee10087.itube.QA.bean;
 
+import java.sql.Blob;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
@@ -35,6 +36,7 @@ public class MemberQABean {
 	private String memAsk;
 	private String memTitle;
 	private java.util.Date memQuesTime;
+	private Blob memQuespic;
 
 	
 	public MemberQABean() {
@@ -98,27 +100,41 @@ public class MemberQABean {
 //		}
 //	}	
 
-	public MemberQABean(Integer memberQuesNum, String memTopic, String memId, String memMail, String memName,
-			Integer memTel, String memAddr, String memAsk, String memTitle, java.util.Date memQuesTime) {
-		super();
-		this.memberQuesNum = memberQuesNum;
-		this.memTopic = memTopic;
-		this.memId = memId;
-		this.memMail = memMail;
-		this.memName = memName;
-		this.memTel = memTel;
-		this.memAddr = memAddr;
-		this.memAsk = memAsk;
-		this.memTitle = memTitle;
-		this.memQuesTime = memQuesTime;
-	}
+
+	
+		public MemberQABean(Integer memberQuesNum, String memTopic, String memId, String memMail, String memName,
+				Integer memTel, String memAddr, String memAsk, String memTitle, java.util.Date memQuesTime,
+				Blob memQuespic) {
+			super();
+			this.memberQuesNum = memberQuesNum;
+			this.memTopic = memTopic;
+			this.memId = memId;
+			this.memMail = memMail;
+			this.memName = memName;
+			this.memTel = memTel;
+			this.memAddr = memAddr;
+			this.memAsk = memAsk;
+			this.memTitle = memTitle;
+			this.memQuesTime = memQuesTime;
+			this.memQuespic = memQuespic;
+		}
 
 		@Override
 		public String toString() {
 			return "MemberQABean [memberQuesNum=" + memberQuesNum + ", memTopic=" + memTopic + ", memId=" + memId
 					+ ", memMail=" + memMail + ", memName=" + memName + ", memTel=" + memTel + ", memAddr=" + memAddr
-					+ ", memAsk=" + memAsk + ", memTitle=" + memTitle + ", memQuesTime=" + memQuesTime + "]";
+					+ ", memAsk=" + memAsk + ", memTitle=" + memTitle + ", memQuesTime=" + memQuesTime + ", memQuespic="
+					+ memQuespic + "]";
 		}
+
+		public Blob getMemQuespic() {
+			return memQuespic;
+		}
+
+		public void setMemQuespic(Blob memQuespic) {
+			this.memQuespic = memQuespic;
+		}
+
 		public String getMemAddr() {
 			return memAddr;
 		}
