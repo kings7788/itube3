@@ -105,17 +105,23 @@
           <form  action="<c:url value="/customerreport/qa.controller"/>" name="sentMessage" id="contactForm" enctype="multipart/form-data"  method="post">
             <div class="control-group form-group">
               <div class="controls">
+                <label>topic:</label>
+<!--                 <input type="text" class="form-control" id="topic"  name="topic" > -->
+	                <select  class="form-control"  id="topic"  name="topic">
+					  <option value ="volvo">Volvo</option>
+					  <option value ="saab">Saab</option>
+					  <option value="opel">Opel</option>
+					  <option value="audi">Audi</option>
+					</select>
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
                 <label>account:</label>
                 <input type="text" class="form-control" id="account" name="idd" value="${LoginOK.account}" readonly="readonly">
                 <p class="help-block"></p>
               </div>
             </div>
-<!--             <div class="control-group form-group"> -->
-<!--               <div class="controls"> -->
-<!--                 <label>password:</label> -->
-<!--                 <input type="password" class="form-control" id="password"  name="password" required data-validation-required-message="Please enter your phone number."> -->
-<!--               </div> -->
-<!--             </div> -->
             <div class="control-group form-group">
               <div class="controls">
                 <label>Name:</label>
