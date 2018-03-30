@@ -23,10 +23,10 @@
 
   <body>
 
-    <!-- Navigation -->
+    	 <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand" href="index.html">III TUBE</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,7 +39,7 @@
               <a class="nav-link" href="services.html">Services</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="contact.html">contact</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,15 +64,13 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Other Pages
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
+           	     客服中心	
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-                <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-                <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-                <a class="dropdown-item" href="faq.html">FAQ</a>
-                <a class="dropdown-item" href="404.html">404</a>
-                <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+                <a class="dropdown-item" href="../customerreport/contact.jsp">聯絡我們</a>
+                <a class="dropdown-item" href="../customerreport/faq.jsp">FAQ</a>
+             
               </div>
             </li>
           </ul>
@@ -108,79 +106,57 @@
                 <label>topic:</label>
 <!--                 <input type="text" class="form-control" id="topic"  name="topic" > -->
 	                <select  class="form-control"  id="topic"  name="topic">
-					  <option value ="volvo">Volvo</option>
-					  <option value ="saab">Saab</option>
-					  <option value="opel">Opel</option>
-					  <option value="audi">Audi</option>
+					  <option value="直播">直播</option>
+					  <option value="商城">商城</option>
+					  <option value="競標">競標</option>
+					  <option value="影音">影音</option>
 					</select>
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
-                <label>account:</label>
-                <input type="text" class="form-control" id="account" name="idd" value="${LoginOK.account}" readonly="readonly">
+                <label>Account/帳號<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="account" name="idd" value="${LoginOK.account}" >
                 <p class="help-block"></p>
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
-                <label>Name:</label>
-                <input type="text" class="form-control" id="nickname"  name="name" value="${LoginOK.name}" readonly="readonly"">
+                <label>Name/姓名與職稱<span style="color:red">*</span></label>
+                <input type="text" class="form-control" id="nickname"  name="name" value="${LoginOK.name}" required="required" >
               </div>
             </div>
-<!--             <div class="control-group form-group"> -->
-<!--               <div class="controls"> -->
-<!--                 <label>firstname:</label> -->
-<!--                 <input type="text" class="form-control" id="firstname" name="firstname"  required data-validation-required-message="Please enter your email address."> -->
-<!--               </div> -->
-<!--             </div> -->
+           
             <div class="control-group form-group">
               <div class="controls">
-                <label>cellphone:</label>
-                <input type="text" class="form-control" id="cellphone" name="tel" value="">
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>address:</label>
-                <input type="text" class="form-control" id="address" name="address" value="${LoginOK.address} ">
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>email:</label>
+                <label>Email/電子信箱<span style="color:red">*</span></label>
                 <input type="email" class="form-control" id="email" name="mailbox" value="${LoginOK.email}">
               </div>
             </div>
-<!--             <div class="control-group form-group"> -->
-<!--               <div class="controls"> -->
-<!--                 <label>birthday:</label> -->
-<!--                 <input type="date" class="form-control" id="birthday" name="birthday"  required data-validation-required-message="Please enter your email address."> -->
-<!--               </div> -->
-<!--             </div> -->
+
             <div class="control-group form-group">
               <div class="controls">
-                <label>title:</label>
+                <label>Title/主旨<span style="color:red">*</span></label>
                 <input type="text" class="form-control" id="title" name="title"  value="${param.title}">
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
-                <label>messeage:</label>
-                <textarea rows="4" cols="180"  class="form-control" name="report" value="${param.report}"></textarea>
+                <label>Messeage/聯絡訊息<span style="color:red">*</span></label>
+                <textarea rows="4" cols="180"  class="form-control" name="report" value="${param.report}" required="required"></textarea>
               </div>
             </div>
-<!--             <div class="control-group form-group"> -->
-<!--               <div class="controls"> -->
-<!--                 <label>gender:</label> -->
-<!--                 男:<input type="radio" id="gender" name="" value="male" required data-validation-required-message="Please enter your email address."> -->
-<!--                 女:<input type="radio" id="gender"  name="" value="female" required data-validation-required-message="Please enter your email address."> -->
-<!--               </div> -->
-<!--             </div> -->
+
             <div class="control-group form-group">
               <div class="controls">
                 <label>照片:</label>
-                <input type="file" class="form-control" id="picture" name="picture" ">
+                <input type="file" class="form-control" id="picture" name="picture" >
+              </div>
+            </div>
+                   <div class="control-group form-group">
+              <div class="controls">
+                <label>照片:</label>
+                <input type="file" class="form-control" id="picture" name="picture" >
               </div>
             </div>
             <div id="success"></div>
