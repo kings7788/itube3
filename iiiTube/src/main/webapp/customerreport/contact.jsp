@@ -103,7 +103,7 @@
           <form  action="<c:url value="/customerreport/qa.controller"/>" name="sentMessage" id="contactForm" enctype="multipart/form-data"  method="post">
             <div class="control-group form-group">
               <div class="controls">
-                <label>topic:</label>
+                <label>項目:</label>
 <!--                 <input type="text" class="form-control" id="topic"  name="topic" > -->
 	                <select  class="form-control"  id="topic"  name="topic">
 					  <option value="直播">直播</option>
