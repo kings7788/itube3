@@ -11,13 +11,10 @@ public interface MemberQADAO {
 
 	MemberQABean update(MemberQABean mem) throws SQLException;
 
-
-
 	MemberQABean delete(MemberQABean mem) throws SQLException;
 
 	MemberQABean findbyPrimaryKey(MemberQABean mem) throws SQLException;
 
 	List<MemberQABean> getALL() throws SQLException;
-
 
 }

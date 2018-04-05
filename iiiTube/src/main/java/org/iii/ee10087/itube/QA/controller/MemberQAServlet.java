@@ -37,6 +37,7 @@ private MemberQAService service ;
 private MemberQABean bean;
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setHeader("content-type", "text/html;charset=UTF-8");
 		request.setCharacterEncoding("UTF-8"); // 文字資料轉內碼
 		HttpSession session = request.getSession();
 		//接收資料

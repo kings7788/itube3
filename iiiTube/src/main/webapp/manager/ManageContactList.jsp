@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%> 
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -78,12 +78,11 @@
 	$(document).ready(function(){
 	
 		$.getJSON("../contactservlet",function(datas){
-			console.log(datas);
+// 			console.log(datas);
  			var docFrag = $(document.createDocumentFragment());
 			   $.each(datas,function(idx,bean){
-				   console.log(bean.MemId);
-				   
-				   console.log(bean.memName);
+// 				   console.log(bean.MemId); 
+// 				   console.log(bean.memName);
 				   	var cell1 = $('<td></td>').text(bean.MemQuesNum);
 				   	var cell2 = $('<td></td>').text(bean.MemTopic);
 		               var cell3 = $('<td></td>').text(bean.MemId);

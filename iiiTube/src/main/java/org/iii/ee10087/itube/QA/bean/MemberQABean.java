@@ -43,7 +43,7 @@ public class MemberQABean {
 		
 	}
 
-//	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException {
 ////		StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().configure().build();
 ////		SessionFactory factory = new MetadataSources(serviceRegistry).buildMetadata().buildSessionFactory();
 ////			Session session = factory.getCurrentSession();
@@ -51,9 +51,10 @@ public class MemberQABean {
 //		try {
 //			HibernateUtil.getSessionFactory().getCurrentSession().beginTransaction();
 //			Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-//			
-//			MemeberQAHibernate dao = new MemeberQAHibernate(HibernateUtil.getSessionFactory());
-////			MemberQABean mem = new MemberQABean(100, "fuckyou7710", "55@22", "三重金城武", 777558, "在座的各位都是垃圾", new java.sql.Date(0));
+	
+			
+//		MemeberQAHibernate dao = new MemeberQAHibernate(HibernateUtil.getSessionFactory());
+//			MemberQABean mem = new MemberQABean(100, "fuckyou7710", "55@22", "三重金城武", "sss", 777558, "在座的各位都是垃圾", "sss", "sss", new java.sql.Date(0), );
 //////			insert test
 ////			mem.setMemberQuesNum(100);
 ////			mem.setMemId("fuckyou7710");
@@ -98,7 +99,7 @@ public class MemberQABean {
 //			HibernateUtil.closeSessionFactory();
 ////			factory.close();
 //		}
-//	}	
+	}	
 
 
 	

@@ -15,7 +15,8 @@
 		
 		<mapping class="org.iii.ee10087.itube.QA.bean.MemberQABean" />
 		<mapping class="org.iii.ee10087.itube.memberRegister.bean.MemberBean" />
-	
+		<mapping class="org.iii.ee10087.itube.manage.bean.ManageBean" />
+
 
     </session-factory>
 </hibernate-configuration>
