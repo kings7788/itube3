@@ -17,7 +17,7 @@
 </head>
 <body>
  	<!-- Navigation -->
-    <jsp:include page="../partial/header.html" />
+    <jsp:include page="../partial/header.jsp" />
 	<!-- Page Content -->
     <div class="container">
 	<!-- Page Heading/Breadcrumbs -->
@@ -35,47 +35,48 @@
             <div class="control-group form-group">
               <div class="controls">
                 <label>項目:</label>
-                
+                 <input type="text" class="form-control" id="account" name="idd" value="${HaveBean.memTopic}" readonly>
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>Account/帳號<span style="color:red">*</span></label>
-                <input type="text" class="form-control" id="account" name="idd" value="${LoginOK.account}" >
+                <input type="text" class="form-control" id="account" name="idd" value="${HaveBean.memId}" readonly>
                 <p class="help-block"></p>
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>Name/姓名與職稱<span style="color:red">*</span></label>
-                <input type="text" class="form-control" id="nickname"  name="name" value="" required="required" >
+                <input type="text" class="form-control" id="nickname"  name="name" value="${HaveBean.memName}" readonly>
               </div>
             </div>
            
             <div class="control-group form-group">
               <div class="controls">
                 <label>Email/電子信箱<span style="color:red">*</span></label>
-                <input type="email" class="form-control" id="email" name="mailbox" value="">
+                <input type="email" class="form-control" id="email" name="mailbox" value="${HaveBean.memMail}" readonly>
               </div>
             </div>
 
             <div class="control-group form-group">
               <div class="controls">
                 <label>Title/主旨<span style="color:red">*</span></label>
-                <input type="text" class="form-control" id="title" name="title"  value="">
+                <input type="text" class="form-control" id="title" name="title"  value="${HaveBean.memTitle}" readonly >
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>Messeage/聯絡訊息<span style="color:red">*</span></label>
-                <textarea rows="4" cols="180"  class="form-control" name="report" value="" required="required"></textarea>
+                <textarea rows="4" cols="180"  class="form-control" name="report" value="" readonly>${HaveBean.memAsk}</textarea>
               </div>
             </div>
 
             <div class="control-group form-group">
               <div class="controls">
                 <label>照片:</label>
-                <input type="" class="form-control" id="picture" name="picture" >
+                 <img height='500' width='500' 
+         	src='${pageContext.servletContext.contextPath}/getImageServlet?id=${HaveBean.memberQuesNum}'>             
               </div>
             </div>
                

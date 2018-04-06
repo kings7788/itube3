@@ -13,7 +13,7 @@
 <body>
 
 		 <!-- Navigation -->
-    	<jsp:include page="../partial/header.html" />
+    	<jsp:include page="../partial/header.jsp" />
     	
 	
 	<div class="card">

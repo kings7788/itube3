@@ -120,12 +120,12 @@ private MemberQABean bean;
 		bean.setMemTitle(titlee);
 		bean.setMemAsk(report);
 		bean.setMemQuesTime(date);
+		bean.setMemFileName(fileName);
 		bean.setMemQuespic(blob);
 //model 結果導向view
 		String contextPath = getServletContext().getContextPath();
 		if(submit!=null&& submit.equals("submit")) {
-			service = new MemberQAService();
-			
+			service = new MemberQAService();	
 			MemberQABean result=null;
 				try {
 						result = service.insert(bean);
@@ -139,12 +139,10 @@ private MemberQABean bean;
 					
 					e.printStackTrace();
 				}
-			if(result==null) {
-				errors.put("action", "Insert fail");
-			}else {
-				request.setAttribute("insert", result);
-			}
-			request.getRequestDispatcher("/customerreport/CustomerCommonQA.jsp").forward(request,response);
+				if(result==null) {
+					errors.put("action", "Insert fail");
+				}
+				request.getRequestDispatcher("/customerreport/CustomerCommonQA.jsp").forward(request,response);
 		}
 		
 	}//dopost結束	

@@ -30,6 +30,13 @@ public class MemberQAService {
 	
 		return resultlist;
 	}
-	
+	public MemberQABean select(MemberQABean bean) throws SQLException {
+		MemberQABean result =null;
+		result = memberDao.findbyPrimaryKey(bean);
+		if(result!=null) {
+		return result;
+		}
+		return null;
+	}
 	
 }

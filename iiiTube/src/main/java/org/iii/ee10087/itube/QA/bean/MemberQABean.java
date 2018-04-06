@@ -36,6 +36,7 @@ public class MemberQABean {
 	private String memAsk;
 	private String memTitle;
 	private java.util.Date memQuesTime;
+	private String memFileName;
 	private Blob memQuespic;
 
 	
@@ -103,29 +104,42 @@ public class MemberQABean {
 
 
 	
+
 		public MemberQABean(Integer memberQuesNum, String memTopic, String memId, String memMail, String memName,
-				Integer memTel, String memAddr, String memAsk, String memTitle, java.util.Date memQuesTime,
-				Blob memQuespic) {
-			super();
-			this.memberQuesNum = memberQuesNum;
-			this.memTopic = memTopic;
-			this.memId = memId;
-			this.memMail = memMail;
-			this.memName = memName;
-			this.memTel = memTel;
-			this.memAddr = memAddr;
-			this.memAsk = memAsk;
-			this.memTitle = memTitle;
-			this.memQuesTime = memQuesTime;
-			this.memQuespic = memQuespic;
-		}
+			Integer memTel, String memAddr, String memAsk, String memTitle, java.util.Date memQuesTime,
+			String memFileName, Blob memQuespic) {
+		super();
+		this.memberQuesNum = memberQuesNum;
+		this.memTopic = memTopic;
+		this.memId = memId;
+		this.memMail = memMail;
+		this.memName = memName;
+		this.memTel = memTel;
+		this.memAddr = memAddr;
+		this.memAsk = memAsk;
+		this.memTitle = memTitle;
+		this.memQuesTime = memQuesTime;
+		this.memFileName = memFileName;
+		this.memQuespic = memQuespic;
+	}
+
+		
 
 		@Override
 		public String toString() {
 			return "MemberQABean [memberQuesNum=" + memberQuesNum + ", memTopic=" + memTopic + ", memId=" + memId
 					+ ", memMail=" + memMail + ", memName=" + memName + ", memTel=" + memTel + ", memAddr=" + memAddr
-					+ ", memAsk=" + memAsk + ", memTitle=" + memTitle + ", memQuesTime=" + memQuesTime + ", memQuespic="
-					+ memQuespic + "]";
+					+ ", memAsk=" + memAsk + ", memTitle=" + memTitle + ", memQuesTime=" + memQuesTime
+					+ ", memFileName=" + memFileName + ", memQuespic=" + memQuespic + "]";
+		}
+
+		
+		public String getMemFileName() {
+			return memFileName;
+		}
+
+		public void setMemFileName(String memFileName) {
+			this.memFileName = memFileName;
 		}
 
 		public Blob getMemQuespic() {

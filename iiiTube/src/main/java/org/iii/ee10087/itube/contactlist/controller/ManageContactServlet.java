@@ -2,6 +2,7 @@ package org.iii.ee10087.itube.contactlist.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -36,6 +37,11 @@ public class ManageContactServlet extends HttpServlet {
 			try {
 					list = service.getALL();
 					request.setAttribute("MapKey", list);
+					for(MemberQABean bean : list) {
+						Blob blob = bean.getMemQuespic();		
+					}
+					
+					
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}		

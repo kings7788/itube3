@@ -24,7 +24,7 @@
   <body>
 
     	 <!-- Navigation -->
-    	<jsp:include page="../partial/header.html" />
+    	<jsp:include page="../partial/header.jsp" />
     <!-- Page Content -->
     <div class="container">
 
@@ -100,13 +100,13 @@
                 <input type="file" class="form-control" id="picture" name="picture" >
               </div>
             </div>
-                   <div class="control-group form-group">
-              <div class="controls">
-                <label>照片:</label>
-                <input type="file" class="form-control" id="picture" name="picture" >
-              </div>
-            </div>
-            <div id="success"></div>
+<!--                    <div class="control-group form-group"> -->
+<!--               <div class="controls"> -->
+<!--                 <label>照片:</label> -->
+<!--                 <input type="file" class="form-control" id="picture" name="picture" > -->
+<!--               </div> -->
+<!--             </div> -->
+<!--             <div id="success"></div> -->
             <!-- For success/fail messages -->
             <input type="submit" class="btn btn-primary" id="sendMessageButton" name="prodaction" value="submit"/>
           </form>
