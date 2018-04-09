@@ -21,7 +21,7 @@
 	<!-- Page Content -->
     <div class="container">
 	<!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">後台回應問題頁面
+      <h1 class="mt-4 mb-3">會員回報單 編號:${HaveBean.memberQuesNum}
         <small></small>
       </h1>	
       
@@ -82,7 +82,7 @@
                
             <div id="success"></div>
             <!-- For success/fail messages -->
-            <input type="submit" class="btn btn-primary" id="sendMessageButton" name="prodaction" value="submit"/>
+            <input type="button" class="btn btn-primary" id="sendMessageButton" name="prodaction" value="回覆"/>
           </form>
         </div>
 
