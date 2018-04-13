@@ -23,7 +23,7 @@
 
   <body>
  		<!-- Navigation -->
-    	<jsp:include page="../partial/header.jsp" />
+    	<jsp:include page="../partial/header.html" />
    
     	
     <!-- Page Content -->

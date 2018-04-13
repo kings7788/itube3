@@ -14,7 +14,7 @@
 </head>
 <body>
 	<!-- Navigation -->
-	<jsp:include page="../partial/header.jsp" />
+	<jsp:include page="../partial/header.html" />
 	<div class="card">
 		<div class="card-header">待處理問題回報</div>
 		<div class="card-body">

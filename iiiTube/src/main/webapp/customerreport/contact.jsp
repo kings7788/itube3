@@ -24,7 +24,7 @@
   <body>
 
     	 <!-- Navigation -->
-    	<jsp:include page="../partial/header.jsp" />
+    	<jsp:include page="../partial/header.html" />
     <!-- Page Content -->
     <div class="container">
 
@@ -64,13 +64,14 @@
               <div class="controls">
                 <label>Account/帳號<span style="color:red">*</span></label>
                 <input type="text" class="form-control" id="account" name="idd" value="${LoginOK.account}" >
-                <p class="help-block"></p>
+                <p class="help-block">${errors.errorIDEmpty}</p>
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>Name/姓名與職稱<span style="color:red">*</span></label>
                 <input type="text" class="form-control" id="nickname"  name="name" value="${LoginOK.name}" required="required" >
+                <p class="help-block">${errors.errorNameEmpty}</p>
               </div>
             </div>
            
@@ -78,19 +79,22 @@
               <div class="controls">
                 <label>Email/電子信箱<span style="color:red">*</span></label>
                 <input type="email" class="form-control" id="email" name="mailbox" value="${LoginOK.email}">
+                <p class="help-block">${errors.errormailEmpty}</p>
               </div>
             </div>
 
             <div class="control-group form-group">
               <div class="controls">
                 <label>Title/主旨<span style="color:red">*</span></label>
-                <input type="text" class="form-control" id="title" name="title"  value="${param.title}">
+                <input type="text"  id="title" name="title"  value="${param.title}">
+                <p class="help-block">${errors.errortitleeEmpty}</p>
               </div>
             </div>
             <div class="control-group form-group">
               <div class="controls">
                 <label>Messeage/聯絡訊息<span style="color:red">*</span></label>
-                <textarea rows="4" cols="180"  class="form-control" name="report" value="${param.report}" required="required"></textarea>
+                <textarea rows="4" cols="180"  class="form-control" name="report" value="${param.report}" required="required">${param.report}</textarea>
+                <p class="help-block"></p>
               </div>
             </div>
 
@@ -98,6 +102,7 @@
               <div class="controls">
                 <label>照片:</label>
                 <input type="file" class="form-control" id="picture" name="picture" >
+                <div class="help-block">${errors.errPicture}</div>
               </div>
             </div>
 <!--                    <div class="control-group form-group"> -->

@@ -16,7 +16,7 @@
 	<h2>${LoginOK.manageId}管理員，您好</h2>
 		
 	<a href="<c:url value="ManageContactList.jsp"/>">查詢會員問題回復</a><br>
-	<a href="<c:url value="../contactlist/ManageContactServlet"/>">查詢會員問題回復JSP</a><br>
+	<a href="<c:url value="../ManageContactServlet"/>">查詢會員問題回復JSP</a><br>
 	<a href="<c:url value="Logout.jsp"/>">管理員登出</a>
 </c:if>	
 
